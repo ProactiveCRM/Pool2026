@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Search, MapPin, Users, Trophy, Calendar, Star, BarChart3 } from 'lucide-react';
+import { Search, Users, Trophy, Calendar, Star, BarChart3 } from 'lucide-react';
+import { HeroButtons } from '@/components/home/HeroButtons';
 
 export default function HomePage() {
   return (
@@ -31,20 +32,7 @@ export default function HomePage() {
               Discover top-rated billiards venues, pool halls, and snooker rooms near you.
               Search by location, table types, and amenities. Made for players, by players.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
-              <Button size="lg" asChild className="text-base w-full sm:w-auto">
-                <Link href="/venues">
-                  <Search className="mr-2 h-5 w-5" />
-                  Browse All Venues
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="text-base w-full sm:w-auto">
-                <Link href="/venues">
-                  <MapPin className="mr-2 h-5 w-5" />
-                  Find Near Me
-                </Link>
-              </Button>
-            </div>
+            <HeroButtons />
           </div>
         </div>
       </section>
