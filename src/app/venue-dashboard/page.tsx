@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
     BarChart3, Calendar, Star, Tag, Users, TrendingUp,
-    Clock, CheckCircle, XCircle, ArrowRight, Plus, MapPin
+    Clock, CheckCircle, ArrowRight, Plus, MapPin
 } from 'lucide-react';
 import { PROMOTION_TYPE_LABELS } from '@/types/analytics';
 

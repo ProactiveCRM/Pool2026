@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Search, MapPin, Users, Trophy } from 'lucide-react';
+import { Search, MapPin, Users, Trophy, Calendar, Star, BarChart3 } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -54,46 +54,82 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
-              Why Players Choose PoolFinder 🏆
+              The Complete Pool Platform 🏆
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-2">
-              We make it easy to discover and connect with the best pool venues in your area.
+              Everything you need to find venues, book tables, join leagues, and connect with players.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
               <CardContent className="pt-5 sm:pt-6">
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 sm:mb-4">
                   <Search className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">🔍 Easy Search</h3>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">🔍 Find Venues</h3>
                 <p className="text-muted-foreground text-sm sm:text-base">
-                  Find venues by city, state, table types, and amenities. Our powerful search helps you find exactly what you&apos;re looking for.
+                  Search by location, table types, and amenities. Discover the perfect spot for your next game.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
               <CardContent className="pt-5 sm:pt-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 sm:mb-4">
-                  <Users className="h-6 w-6 text-primary" />
+                <div className="h-12 w-12 rounded-lg bg-green-500/10 flex items-center justify-center mb-3 sm:mb-4">
+                  <Calendar className="h-6 w-6 text-green-500" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">🤝 Connect Directly</h3>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">📅 Reserve Tables</h3>
                 <p className="text-muted-foreground text-sm sm:text-base">
-                  Send inquiries directly to venues. Whether you&apos;re planning an event or just looking to play, we connect you instantly.
+                  Book your table in advance. No more waiting—guaranteed table time when you arrive.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02] sm:col-span-2 md:col-span-1">
+            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
               <CardContent className="pt-5 sm:pt-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 sm:mb-4">
-                  <Trophy className="h-6 w-6 text-primary" />
+                <div className="h-12 w-12 rounded-lg bg-yellow-500/10 flex items-center justify-center mb-3 sm:mb-4">
+                  <Trophy className="h-6 w-6 text-yellow-500" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">✅ Verified Venues</h3>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">🏆 Join Leagues</h3>
                 <p className="text-muted-foreground text-sm sm:text-base">
-                  Claimed listings are verified by venue owners, ensuring you get accurate information about hours, tables, and amenities.
+                  Compete in local leagues, form teams, and track your standings throughout the season.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
+              <CardContent className="pt-5 sm:pt-6">
+                <div className="h-12 w-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-3 sm:mb-4">
+                  <Star className="h-6 w-6 text-blue-500" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">⭐ Rate & Review</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">
+                  Share your experiences and help others find great venues with detailed reviews.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
+              <CardContent className="pt-5 sm:pt-6">
+                <div className="h-12 w-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-3 sm:mb-4">
+                  <Users className="h-6 w-6 text-purple-500" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">👤 Player Profiles</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">
+                  Build your profile, earn badges, and connect with players looking for games or teams.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
+              <CardContent className="pt-5 sm:pt-6">
+                <div className="h-12 w-12 rounded-lg bg-orange-500/10 flex items-center justify-center mb-3 sm:mb-4">
+                  <BarChart3 className="h-6 w-6 text-orange-500" />
+                </div>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">📊 Venue Dashboard</h3>
+                <p className="text-muted-foreground text-sm sm:text-base">
+                  Venue owners get analytics, promotion tools, and reservation management in one place.
                 </p>
               </CardContent>
             </Card>
