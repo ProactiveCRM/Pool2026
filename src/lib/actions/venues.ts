@@ -123,3 +123,75 @@ export async function getFeaturedVenues(limit: number = 4): Promise<Venue[]> {
 
     return (data as Venue[]) ?? [];
 }
+
+// Get venues near a location using coordinates
+export async function getNearbyVenues(
+    lat: number,
+    lng: number,
+    radiusMiles: number = 25,
+    limit: number = 20
+): Promise<(Venue & { distance_miles: number })[]> {
+    const supabase = await createClient();
+
+    // Use Haversine formula via RPC if available, otherwise filter client-side
+    // First try the RPC approach (requires a database function)
+    const { data: rpcData, error: rpcError } = await supabase
+        .rpc('get_venues_within_radius', {
+            lat,
+            lng,
+            radius_miles: radiusMiles,
+            max_results: limit
+        });
+
+    if (!rpcError && rpcData) {
+        return rpcData as (Venue & { distance_miles: number })[];
+    }
+
+    // Fallback: Get all active venues and filter client-side
+    // This is less efficient but works without the RPC function
+    const { data, error } = await supabase
+        .from('venues')
+        .select('*')
+        .eq('is_active', true)
+        .not('latitude', 'is', null)
+        .not('longitude', 'is', null);
+
+    if (error) {
+        console.error('Error fetching venues for nearby search:', error);
+        return [];
+    }
+
+    // Calculate distances and filter
+    const venuesWithDistance = (data as Venue[])
+        .map(venue => ({
+            ...venue,
+            distance_miles: calculateDistance(lat, lng, venue.latitude!, venue.longitude!)
+        }))
+        .filter(v => v.distance_miles <= radiusMiles)
+        .sort((a, b) => a.distance_miles - b.distance_miles)
+        .slice(0, limit);
+
+    return venuesWithDistance;
+}
+
+// Haversine formula to calculate distance between two points
+function calculateDistance(
+    lat1: number,
+    lon1: number,
+    lat2: number,
+    lon2: number
+): number {
+    const R = 3959; // Earth's radius in miles
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}
+
+function toRad(deg: number): number {
+    return deg * (Math.PI / 180);
+}
