@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { useState } from 'react';
 
 const navLinks = [
@@ -45,6 +46,7 @@ export function Header() {
 
                 {/* Desktop CTA */}
                 <div className="hidden md:flex items-center gap-3">
+                    <ThemeToggle />
                     <Button variant="ghost" asChild>
                         <Link href="/auth">Sign In</Link>
                     </Button>
@@ -78,7 +80,11 @@ export function Header() {
                                     </Link>
                                 ))}
                             </nav>
-                            <div className="flex flex-col gap-3 pt-4 border-t">
+                            <div className="flex items-center justify-between pt-4 border-t">
+                                <span className="text-sm text-muted-foreground">Theme</span>
+                                <ThemeToggle />
+                            </div>
+                            <div className="flex flex-col gap-3">
                                 <Button variant="outline" asChild>
                                     <Link href="/auth" onClick={() => setMobileMenuOpen(false)}>
                                         Sign In

@@ -12,11 +12,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'PoolFinder - Find Pool Halls & Billiards Venues Near You',
-    template: '%s | PoolFinder',
+    default: 'PoolFinder - Find Pool Halls & Billiards Venues Near You 🎱',
+    template: '%s | PoolFinder 🎱',
   },
   description:
-    'Discover the best pool halls, billiards rooms, and snooker venues in your area. Search by location, amenities, and table types.',
+    'Discover the best pool halls, billiards rooms, and snooker venues in your area. Search by location, amenities, and table types. Made for pool players, by pool players.',
   keywords: [
     'pool hall',
     'billiards',
@@ -25,13 +25,43 @@ export const metadata: Metadata = {
     'cue sports',
     'pool venue',
     'billiards room',
+    'pool hall near me',
+    'billiards near me',
+    'pool hall directory',
   ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     siteName: 'PoolFinder',
+    title: 'PoolFinder - Find Pool Halls & Billiards Venues Near You 🎱',
+    description: 'Discover the best pool halls, billiards rooms, and snooker venues in your area.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PoolFinder - Find Pool Halls Near You 🎱',
+    description: 'Discover the best pool halls, billiards rooms, and snooker venues in your area.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
+
+// Script to initialize theme before React hydrates to prevent flash
+const themeScript = `
+  (function() {
+    try {
+      var theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    } catch (e) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+`;
 
 export default function RootLayout({
   children,
@@ -39,7 +69,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <div className="relative min-h-screen flex flex-col">
           <Header />
@@ -51,3 +84,4 @@ export default function RootLayout({
     </html>
   );
 }
+
