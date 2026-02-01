@@ -16,6 +16,7 @@ import {
     CheckCircle,
     ArrowLeft,
     Flag,
+    CalendarCheck,
 } from 'lucide-react';
 
 interface VenueDetailPageProps {
@@ -234,6 +235,23 @@ export default async function VenueDetailPage({ params }: VenueDetailPageProps) 
                             </CardContent>
                         </Card>
                     )}
+
+                    {/* Reserve a Table - Primary CTA */}
+                    <Card className="bg-primary/10 border-primary/30">
+                        <CardContent className="py-6 text-center">
+                            <div className="text-4xl mb-3">🎱</div>
+                            <h3 className="font-semibold text-lg mb-2">Reserve a Table</h3>
+                            <p className="text-sm text-muted-foreground mb-4">
+                                Book online and skip the wait
+                            </p>
+                            <Button size="lg" className="w-full" asChild>
+                                <Link href={`/venues/${venue.slug}/book`}>
+                                    <CalendarCheck className="mr-2 h-4 w-4" />
+                                    Book Now
+                                </Link>
+                            </Button>
+                        </CardContent>
+                    </Card>
 
                     {/* Inquiry Form */}
                     <InquiryForm venueId={venue.id} venueName={venue.name} />
