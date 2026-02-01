@@ -11,6 +11,7 @@ import { useState } from 'react';
 const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/venues', label: 'Find Venues' },
+    { href: '/leagues', label: 'Leagues 🏆' },
 ];
 
 export function Header() {
