@@ -3,6 +3,7 @@
 import { createClient } from '@/lib/supabase/server';
 import { claimCreateSchema, type ClaimCreateInput } from '@/lib/validations/claim';
 import { revalidatePath } from 'next/cache';
+import { upsertGHLContact, createGHLOpportunity } from '@/lib/ghl';
 
 interface ActionResult {
     success: boolean;
@@ -73,7 +74,38 @@ export async function createClaim(input: ClaimCreateInput): Promise<ActionResult
             return { success: false, error: 'Failed to submit claim. Please try again.' };
         }
 
-        // TODO: Trigger GHL integration asynchronously
+        // GHL Integration - sync contact and create opportunity
+        try {
+            const nameParts = validated.user_name.split(' ');
+            const ghlContactId = await upsertGHLContact({
+                firstName: nameParts[0] || '',
+                lastName: nameParts.slice(1).join(' ') || '',
+                email: validated.user_email,
+                phone: validated.user_phone,
+                tags: ['venue-claim', 'poolfinder', `role-${validated.business_role}`],
+            });
+
+            if (ghlContactId) {
+                // Create opportunity in claims pipeline
+                const ghlOpportunityId = await createGHLOpportunity({
+                    name: `Venue Claim: ${venue.name}`,
+                    pipelineId: process.env.GHL_PIPELINE_CLAIMS || '',
+                    stageId: process.env.GHL_STAGE_PENDING || '',
+                    contactId: ghlContactId,
+                });
+
+                // Update claim with GHL IDs
+                if (ghlOpportunityId) {
+                    await supabase
+                        .from('claims')
+                        .update({ ghl_opportunity_id: ghlOpportunityId })
+                        .eq('id', data.id);
+                }
+            }
+        } catch (ghlError) {
+            // Log but don't fail the claim if GHL sync fails
+            console.error('GHL sync error:', ghlError);
+        }
 
         revalidatePath('/dashboard');
         revalidatePath('/admin/claims');
