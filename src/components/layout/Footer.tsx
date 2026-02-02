@@ -4,9 +4,9 @@ export function Footer() {
     return (
         <footer className="border-t border-border/40 bg-card/50">
             <div className="container mx-auto px-4 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                     {/* Brand */}
-                    <div className="md:col-span-1">
+                    <div className="col-span-2 md:col-span-1">
                         <Link href="/" className="flex items-center gap-2 mb-4">
                             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
                                 <span className="text-lg font-bold text-primary-foreground">🎱</span>
@@ -20,11 +20,21 @@ export function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="font-semibold mb-4">Quick Links</h3>
+                        <h3 className="font-semibold mb-4">Explore</h3>
                         <ul className="space-y-2 text-sm text-muted-foreground">
                             <li>
                                 <Link href="/venues" className="hover:text-primary transition-colors">
                                     Browse Venues
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/leagues" className="hover:text-primary transition-colors">
+                                    Leagues
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/pricing" className="hover:text-primary transition-colors">
+                                    Pricing
                                 </Link>
                             </li>
                             <li>
@@ -41,7 +51,12 @@ export function Footer() {
                         <ul className="space-y-2 text-sm text-muted-foreground">
                             <li>
                                 <Link href="/venues" className="hover:text-primary transition-colors">
-                                    Claim Your Listing
+                                    Claim Your Venue
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/venue-dashboard" className="hover:text-primary transition-colors">
+                                    Venue Dashboard
                                 </Link>
                             </li>
                             <li>
@@ -52,11 +67,25 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    {/* Contact */}
+                    {/* Company */}
                     <div>
-                        <h3 className="font-semibold mb-4">Contact</h3>
+                        <h3 className="font-semibold mb-4">Company</h3>
                         <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li>support@poolfinder.com</li>
+                            <li>
+                                <Link href="/about" className="hover:text-primary transition-colors">
+                                    About Us
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/contact" className="hover:text-primary transition-colors">
+                                    Contact
+                                </Link>
+                            </li>
+                            <li>
+                                <a href="mailto:support@poolfinder.com" className="hover:text-primary transition-colors">
+                                    support@poolfinder.com
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
