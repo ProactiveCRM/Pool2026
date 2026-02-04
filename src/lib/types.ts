@@ -28,6 +28,7 @@ export interface Venue {
     is_active: boolean;
     latitude: number | null;
     longitude: number | null;
+    rating: number | null; // Average rating from reviews
     created_at: string;
     updated_at: string;
 }

@@ -200,7 +200,7 @@ export function ClaimVenueForm({ venueId, venueName, venueCity, venueState }: Cl
                             {/* Notice */}
                             <div className="bg-muted/50 rounded-lg p-4 text-sm">
                                 <p className="text-muted-foreground">
-                                    By submitting this claim, you confirm that you are authorized to manage this venue&apos;s listing on PoolFinder. We&apos;ll verify your claim and get back to you within 2-3 business days.
+                                    By submitting this claim, you confirm that you are authorized to manage this venue&apos;s listing on RackCity. We&apos;ll verify your claim and get back to you within 2-3 business days.
                                 </p>
                             </div>
 

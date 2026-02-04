@@ -135,8 +135,8 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <p className="font-medium">Email</p>
-                                            <a href="mailto:hello@poolfinder.com" className="text-muted-foreground hover:text-primary">
-                                                hello@poolfinder.com
+                                            <a href="mailto:hello@rackcity.com" className="text-muted-foreground hover:text-primary">
+                                                hello@rackcity.com
                                             </a>
                                         </div>
                                     </div>
@@ -181,10 +181,10 @@ export default function ContactPage() {
                             <div className="p-6 bg-card/50 rounded-lg border border-border/50">
                                 <h3 className="font-semibold mb-2">🤝 Partnerships</h3>
                                 <p className="text-sm text-muted-foreground mb-4">
-                                    Interested in partnering with PoolFinder? Let&apos;s talk.
+                                    Interested in partnering with RackCity? Let&apos;s talk.
                                 </p>
                                 <Button variant="outline" size="sm" asChild>
-                                    <a href="mailto:partners@poolfinder.com">Email Partners Team</a>
+                                    <a href="mailto:partners@rackcity.com">Email Partners Team</a>
                                 </Button>
                             </div>
                         </div>

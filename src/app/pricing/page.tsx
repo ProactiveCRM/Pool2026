@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, X } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Pricing - PoolFinder',
+    title: 'Pricing',
     description: 'Simple, transparent pricing for players and venue owners.',
 };
 
@@ -174,7 +174,7 @@ export default function PricingPage() {
                     <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
                     <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                         <div className="p-6 bg-card/50 rounded-lg">
-                            <h3 className="font-semibold mb-2">Is PoolFinder really free for players?</h3>
+                            <h3 className="font-semibold mb-2">Is RackCity really free for players?</h3>
                             <p className="text-sm text-muted-foreground">
                                 Yes! Players can browse venues, book tables, join leagues, and build their profile completely free. No credit card required.
                             </p>
@@ -182,7 +182,7 @@ export default function PricingPage() {
                         <div className="p-6 bg-card/50 rounded-lg">
                             <h3 className="font-semibold mb-2">How do I claim my venue?</h3>
                             <p className="text-sm text-muted-foreground">
-                                Find your venue on PoolFinder and click &quot;Claim This Venue.&quot; We&apos;ll verify your ownership and you&apos;ll have access within 2-3 business days.
+                                Find your venue on RackCity and click &quot;Claim This Venue.&quot; We&apos;ll verify your ownership and you&apos;ll have access within 2-3 business days.
                             </p>
                         </div>
                         <div className="p-6 bg-card/50 rounded-lg">

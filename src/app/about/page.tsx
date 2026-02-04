@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Target, Users, Trophy, Heart } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'About PoolFinder',
+    title: 'About RackCity',
     description: 'Learn about our mission to connect pool players with the best billiards venues nationwide.',
 };
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
                 <div className="container mx-auto px-4 relative">
                     <div className="max-w-3xl mx-auto text-center">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                            About <span className="text-primary">PoolFinder</span> 🎱
+                            About <span className="text-primary">RackCity</span> 🎱
                         </h1>
                         <p className="text-lg text-muted-foreground">
                             We&apos;re on a mission to connect pool players with amazing venues
@@ -35,13 +35,13 @@ export default function AboutPage() {
                         <h2 className="text-3xl font-bold mb-6 text-center">Our Story</h2>
                         <div className="prose prose-lg dark:prose-invert mx-auto">
                             <p>
-                                PoolFinder started with a simple frustration: finding a great pool hall
+                                RackCity started with a simple frustration: finding a great pool hall
                                 shouldn&apos;t be hard. Whether you&apos;re traveling for work, moving to a new
                                 city, or just looking for a better spot to play—every player deserves
                                 to find their perfect venue.
                             </p>
                             <p>
-                                Built by players, for players, PoolFinder is more than a directory.
+                                Built by players, for players, RackCity is more than a directory.
                                 It&apos;s a platform where you can discover venues, book tables, join
                                 leagues, and connect with fellow enthusiasts.
                             </p>
