@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, MapPin, Trophy, User } from 'lucide-react';
+import { Menu, MapPin, Trophy, User, Bot } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useState } from 'react';
 
@@ -12,6 +12,7 @@ const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/venues', label: 'Venues', icon: MapPin },
     { href: '/leagues', label: 'Leagues', icon: Trophy },
+    { href: '/coach', label: 'AI Coach', icon: Bot },
 ];
 
 export function Header() {
@@ -43,8 +44,8 @@ export function Header() {
                                 key={link.href}
                                 href={link.href}
                                 className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all ${isActive
-                                        ? 'bg-primary/10 text-foreground'
-                                        : 'text-foreground/70 hover:text-foreground hover:bg-muted'
+                                    ? 'bg-primary/10 text-foreground'
+                                    : 'text-foreground/70 hover:text-foreground hover:bg-muted'
                                     }`}
                             >
                                 {Icon && <Icon className="h-4 w-4" />}
@@ -100,8 +101,8 @@ export function Header() {
                                                 href={link.href}
                                                 onClick={() => setMobileMenuOpen(false)}
                                                 className={`flex items-center gap-3 px-4 py-3 text-base font-medium rounded-lg transition-all ${isActive
-                                                        ? 'bg-primary/10 text-foreground'
-                                                        : 'text-foreground/70 hover:text-foreground hover:bg-muted'
+                                                    ? 'bg-primary/10 text-foreground'
+                                                    : 'text-foreground/70 hover:text-foreground hover:bg-muted'
                                                     }`}
                                             >
                                                 {Icon && <Icon className="h-5 w-5" />}
