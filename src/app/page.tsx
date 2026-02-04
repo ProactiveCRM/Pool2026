@@ -2,122 +2,154 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Search, Users, Trophy, Calendar, Star, BarChart3 } from 'lucide-react';
+import { Search, Users, Trophy, Calendar, Star, BarChart3, MapPin, Zap } from 'lucide-react';
 import { HeroButtons } from '@/components/home/HeroButtons';
 
 export default function HomePage() {
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative py-16 sm:py-20 md:py-32 overflow-hidden">
-        {/* Background gradient with green pool table feel */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-background to-accent/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/25 via-transparent to-transparent" />
+      {/* Hero Section - Premium 2026 Design */}
+      <section className="relative py-20 sm:py-28 md:py-36 overflow-hidden gradient-hero">
+        {/* Gradient glow effect */}
+        <div className="absolute inset-0 gradient-glow" />
 
-        {/* Pool ball decorations - subtle background elements */}
-        <div className="absolute top-10 left-10 text-4xl md:text-6xl opacity-10 select-none">🎱</div>
-        <div className="absolute bottom-10 right-10 text-4xl md:text-6xl opacity-10 select-none">🎱</div>
-        <div className="absolute top-1/2 right-20 text-3xl md:text-5xl opacity-5 select-none hidden md:block">🎯</div>
+        {/* Mesh gradient background */}
+        <div className="absolute inset-0 gradient-mesh opacity-60" />
+
+        {/* Animated pool balls */}
+        <div className="absolute top-20 left-[10%] w-16 h-16 pool-ball opacity-20 float" />
+        <div className="absolute bottom-20 right-[15%] w-12 h-12 pool-ball opacity-15 float-delayed" />
+        <div className="absolute top-1/3 right-[8%] w-8 h-8 pool-ball opacity-10 float-slow hidden md:block" />
 
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-3xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-4 sm:mb-6 text-sm sm:text-base px-3 py-1">
-              🎱 The #1 Pool Hall Directory for Players
+          <div className="max-w-4xl mx-auto text-center">
+            <Badge
+              variant="secondary"
+              className="mb-6 sm:mb-8 text-sm sm:text-base px-4 py-1.5 glass-card border-primary/20 glow-hover"
+            >
+              <Zap className="h-4 w-4 mr-2 text-yellow-400" />
+              The #1 Pool Hall Directory for Players
             </Badge>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-4 sm:mb-6">
+
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 sm:mb-8 fade-in-up">
               Find Your Perfect{' '}
-              <span className="text-primary">Pool Hall</span> 🎯
+              <span className="text-gradient">Pool Hall</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
-              Discover top-rated billiards venues, pool halls, and snooker rooms near you.
-              Search by location, table types, and amenities. Made for players, by players.
+
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto px-4 fade-in-up" style={{ animationDelay: '0.1s' }}>
+              Discover top-rated billiards venues near you. Search, book tables, and join leagues—all in one place.
             </p>
-            <HeroButtons />
+
+            <div className="fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <HeroButtons />
+            </div>
+
+            {/* Trust indicators */}
+            <div className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-muted-foreground fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-primary" />
+                <span>500+ Venues</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Users className="h-4 w-4 text-primary" />
+                <span>10K+ Players</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Star className="h-4 w-4 text-yellow-400" />
+                <span>4.8 Average Rating</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-12 sm:py-16 md:py-24 bg-card/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
-              The Complete Pool Platform 🏆
+      <section className="py-16 sm:py-20 md:py-28 relative overflow-hidden">
+        {/* Subtle background texture */}
+        <div className="absolute inset-0 noise" />
+
+        <div className="container mx-auto px-4 relative">
+          <div className="text-center mb-12 sm:mb-16">
+            <Badge variant="outline" className="mb-4 border-primary/30">
+              🏆 Platform Features
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+              Everything You Need to <span className="text-gradient">Play Pool</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base px-2">
-              Everything you need to find venues, book tables, join leagues, and connect with players.
+            <p className="text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg px-4">
+              From finding venues to joining leagues, we've got you covered.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
-              <CardContent className="pt-5 sm:pt-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-3 sm:mb-4">
-                  <Search className="h-6 w-6 text-primary" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
+            <Card className="glass-card card-hover border-0">
+              <CardContent className="pt-8 pb-6">
+                <div className="h-14 w-14 rounded-2xl bg-primary/15 flex items-center justify-center mb-5 glow">
+                  <Search className="h-7 w-7 text-primary" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">🔍 Find Venues</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Search by location, table types, and amenities. Discover the perfect spot for your next game.
+                <h3 className="text-xl font-semibold mb-3">🔍 Smart Search</h3>
+                <p className="text-muted-foreground">
+                  Find venues by location, table type, amenities, and real-time availability.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
-              <CardContent className="pt-5 sm:pt-6">
-                <div className="h-12 w-12 rounded-lg bg-green-500/10 flex items-center justify-center mb-3 sm:mb-4">
-                  <Calendar className="h-6 w-6 text-green-500" />
+            <Card className="glass-card card-hover border-0">
+              <CardContent className="pt-8 pb-6">
+                <div className="h-14 w-14 rounded-2xl bg-green-500/15 flex items-center justify-center mb-5">
+                  <Calendar className="h-7 w-7 text-green-400" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">📅 Reserve Tables</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Book your table in advance. No more waiting—guaranteed table time when you arrive.
+                <h3 className="text-xl font-semibold mb-3">📅 Instant Booking</h3>
+                <p className="text-muted-foreground">
+                  Reserve tables in advance. Guaranteed game time when you arrive.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
-              <CardContent className="pt-5 sm:pt-6">
-                <div className="h-12 w-12 rounded-lg bg-yellow-500/10 flex items-center justify-center mb-3 sm:mb-4">
-                  <Trophy className="h-6 w-6 text-yellow-500" />
+            <Card className="glass-card card-hover border-0">
+              <CardContent className="pt-8 pb-6">
+                <div className="h-14 w-14 rounded-2xl bg-yellow-500/15 flex items-center justify-center mb-5">
+                  <Trophy className="h-7 w-7 text-yellow-400" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">🏆 Join Leagues</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Compete in local leagues, form teams, and track your standings throughout the season.
+                <h3 className="text-xl font-semibold mb-3">🏆 League Play</h3>
+                <p className="text-muted-foreground">
+                  Join local leagues, form teams, and track standings all season.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
-              <CardContent className="pt-5 sm:pt-6">
-                <div className="h-12 w-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-3 sm:mb-4">
-                  <Star className="h-6 w-6 text-blue-500" />
+            <Card className="glass-card card-hover border-0">
+              <CardContent className="pt-8 pb-6">
+                <div className="h-14 w-14 rounded-2xl bg-blue-500/15 flex items-center justify-center mb-5">
+                  <Star className="h-7 w-7 text-blue-400" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">⭐ Rate & Review</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Share your experiences and help others find great venues with detailed reviews.
+                <h3 className="text-xl font-semibold mb-3">⭐ Reviews & Ratings</h3>
+                <p className="text-muted-foreground">
+                  Share experiences and find venues backed by real player reviews.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
-              <CardContent className="pt-5 sm:pt-6">
-                <div className="h-12 w-12 rounded-lg bg-purple-500/10 flex items-center justify-center mb-3 sm:mb-4">
-                  <Users className="h-6 w-6 text-purple-500" />
+            <Card className="glass-card card-hover border-0">
+              <CardContent className="pt-8 pb-6">
+                <div className="h-14 w-14 rounded-2xl bg-purple-500/15 flex items-center justify-center mb-5">
+                  <Users className="h-7 w-7 text-purple-400" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">👤 Player Profiles</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Build your profile, earn badges, and connect with players looking for games or teams.
+                <h3 className="text-xl font-semibold mb-3">👤 Player Profiles</h3>
+                <p className="text-muted-foreground">
+                  Build your profile, earn badges, and connect with other players.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card/50 border-border/50 hover:border-primary/50 transition-all hover:scale-[1.02]">
-              <CardContent className="pt-5 sm:pt-6">
-                <div className="h-12 w-12 rounded-lg bg-orange-500/10 flex items-center justify-center mb-3 sm:mb-4">
-                  <BarChart3 className="h-6 w-6 text-orange-500" />
+            <Card className="glass-card card-hover border-0">
+              <CardContent className="pt-8 pb-6">
+                <div className="h-14 w-14 rounded-2xl bg-orange-500/15 flex items-center justify-center mb-5">
+                  <BarChart3 className="h-7 w-7 text-orange-400" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">📊 Venue Dashboard</h3>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Venue owners get analytics, promotion tools, and reservation management in one place.
+                <h3 className="text-xl font-semibold mb-3">📊 Venue Dashboard</h3>
+                <p className="text-muted-foreground">
+                  Owners get analytics, promotion tools, and reservation management.
                 </p>
               </CardContent>
             </Card>
@@ -125,45 +157,61 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section - New */}
-      <section className="py-10 sm:py-12 md:py-16 border-y border-border/30">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
-            <div className="p-4">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1">🎱 500+</div>
-              <div className="text-xs sm:text-sm text-muted-foreground">Pool Halls Listed</div>
-            </div>
-            <div className="p-4">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1">📍 50</div>
-              <div className="text-xs sm:text-sm text-muted-foreground">States Covered</div>
-            </div>
-            <div className="p-4">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1">🎯 10K+</div>
-              <div className="text-xs sm:text-sm text-muted-foreground">Active Players</div>
-            </div>
-            <div className="p-4">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-1">⭐ 4.8</div>
-              <div className="text-xs sm:text-sm text-muted-foreground">Average Rating</div>
+      {/* Stats Section - Glassmorphic */}
+      <section className="py-16 sm:py-20 relative overflow-hidden">
+        <div className="absolute inset-0 gradient-primary opacity-10" />
+
+        <div className="container mx-auto px-4 relative">
+          <div className="glass-strong rounded-3xl p-8 sm:p-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div className="space-y-2">
+                <div className="text-4xl sm:text-5xl font-bold text-gradient">500+</div>
+                <div className="text-sm sm:text-base text-muted-foreground">Pool Halls</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl sm:text-5xl font-bold text-gradient">50</div>
+                <div className="text-sm sm:text-base text-muted-foreground">States Covered</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl sm:text-5xl font-bold text-gradient">10K+</div>
+                <div className="text-sm sm:text-base text-muted-foreground">Active Players</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl sm:text-5xl font-bold text-gradient-gold">4.8★</div>
+                <div className="text-sm sm:text-base text-muted-foreground">Average Rating</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 sm:py-16 md:py-24">
+      {/* CTA Section - Premium Card */}
+      <section className="py-16 sm:py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <Card className="bg-gradient-to-r from-primary/15 via-card to-accent/10 border-primary/30">
-            <CardContent className="py-8 sm:py-10 md:py-12 text-center px-4 sm:px-6">
-              <div className="text-4xl mb-4">🎱</div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
+          <Card className="glass-card border-primary/20 shine overflow-hidden">
+            <CardContent className="py-12 sm:py-16 text-center px-6 sm:px-8 relative">
+              {/* Decorative glow */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6 glow">
+                <span className="text-4xl">🎱</span>
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
                 Own a Pool Hall?
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto mb-5 sm:mb-6 text-sm sm:text-base">
-                Claim your listing to update your information, respond to inquiries, and connect with players looking for venues like yours.
+              <p className="text-muted-foreground max-w-xl mx-auto mb-8 text-base sm:text-lg">
+                Claim your listing to update info, respond to reviews, manage reservations, and connect with thousands of local players.
               </p>
-              <Button size="lg" asChild className="w-full sm:w-auto">
-                <Link href="/venues">🏆 Claim Your Listing</Link>
-              </Button>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button size="lg" className="btn-glow text-base px-8" asChild>
+                  <Link href="/venues">🏆 Claim Your Listing</Link>
+                </Button>
+                <Button size="lg" variant="outline" className="border-primary/30 hover:bg-primary/10" asChild>
+                  <Link href="/pricing">View Pricing</Link>
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </div>
