@@ -1,11 +1,11 @@
 {
-    "name": "PoolFinder",
-    "short_name": "PoolFinder",
-    "description": "Find pool halls, book tables, join leagues",
+    "name": "RackCity",
+    "short_name": "RackCity",
+    "description": "The #1 platform for pool players. Find venues, book tables, compete in leagues.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#0a0a0a",
-    "theme_color": "#22c55e",
+    "background_color": "#0f1711",
+    "theme_color": "#166534",
     "orientation": "portrait-primary",
     "icons": [
         {

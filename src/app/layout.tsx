@@ -1,10 +1,17 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Space_Grotesk, Inter } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/sonner';
 import { Analytics } from '@vercel/analytics/react';
+
+// Modern geometric font for brand
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+});
 
 const inter = Inter({
   subsets: ['latin'],
@@ -13,11 +20,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'PoolFinder - Find Pool Halls & Billiards Venues Near You 🎱',
-    template: '%s | PoolFinder 🎱',
+    default: 'RackCity — Find Pool Halls, Book Tables, Join Leagues',
+    template: '%s | RackCity',
   },
   description:
-    'Discover the best pool halls, billiards rooms, and snooker venues in your area. Search by location, amenities, and table types. Made for pool players, by pool players.',
+    'The #1 platform for pool players. Discover top-rated billiards venues, book tables instantly, and compete in local leagues. Made for players, by players.',
   keywords: [
     'pool hall',
     'billiards',
@@ -28,19 +35,21 @@ export const metadata: Metadata = {
     'billiards room',
     'pool hall near me',
     'billiards near me',
-    'pool hall directory',
+    'pool leagues',
+    'table reservations',
+    'RackCity',
   ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'PoolFinder',
-    title: 'PoolFinder - Find Pool Halls & Billiards Venues Near You 🎱',
-    description: 'Discover the best pool halls, billiards rooms, and snooker venues in your area.',
+    siteName: 'RackCity',
+    title: 'RackCity — The Pool Player\'s Platform',
+    description: 'Discover venues, book tables, and compete in leagues. The home for pool players.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PoolFinder - Find Pool Halls Near You 🎱',
-    description: 'Discover the best pool halls, billiards rooms, and snooker venues in your area.',
+    title: 'RackCity — The Pool Player\'s Platform',
+    description: 'Discover venues, book tables, and compete in leagues.',
   },
   robots: {
     index: true,
@@ -73,14 +82,14 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#22c55e" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#166534" />
+        <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="PoolFinder" />
+        <meta name="apple-mobile-web-app-title" content="RackCity" />
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${spaceGrotesk.variable} ${inter.variable} font-sans antialiased`}>
         <div className="relative min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">{children}</main>
@@ -92,4 +101,3 @@ export default function RootLayout({
     </html>
   );
 }
-
