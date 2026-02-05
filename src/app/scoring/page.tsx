@@ -20,17 +20,21 @@ export default function ScoringPage() {
                     </p>
                 </div>
 
-                <Tabs defaultValue="scorer" className="space-y-6">
+                <Tabs defaultValue="handicap" className="space-y-6">
                     <TabsList className="grid w-full grid-cols-2">
+                        <TabsTrigger value="handicap" className="gap-2">
+                            <Calculator className="h-4 w-4" />
+                            Handicap Index
+                        </TabsTrigger>
                         <TabsTrigger value="scorer" className="gap-2">
                             <Target className="h-4 w-4" />
                             Quick Scorer
                         </TabsTrigger>
-                        <TabsTrigger value="handicap" className="gap-2">
-                            <Calculator className="h-4 w-4" />
-                            Handicap Calc
-                        </TabsTrigger>
                     </TabsList>
+
+                    <TabsContent value="handicap">
+                        <HandicapCalculator />
+                    </TabsContent>
 
                     <TabsContent value="scorer">
                         <QuickScorer
@@ -41,12 +45,6 @@ export default function ScoringPage() {
                             onMatchComplete={(winner, score) => {
                                 console.log('Match complete:', winner, score);
                             }}
-                        />
-                    </TabsContent>
-
-                    <TabsContent value="handicap">
-                        <HandicapCalculator
-                            onCalculate={(result) => console.log('Handicap:', result)}
                         />
                     </TabsContent>
                 </Tabs>
