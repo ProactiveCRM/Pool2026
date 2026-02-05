@@ -74,7 +74,7 @@ export async function analyzePoolTable(imageBase64: string): Promise<AnalysisRes
             };
         }
 
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+        const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
 
         // Remove data URL prefix if present
         const base64Data = imageBase64.replace(/^data:image\/\w+;base64,/, '');
