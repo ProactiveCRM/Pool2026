@@ -27,8 +27,13 @@ export async function sendCoachMessage(
             systemInstruction: COACH_SYSTEM_PROMPT,
         });
 
+        // Filter history to only include conversation after first user message
+        // Gemini requires history to start with a 'user' role
+        const firstUserIndex = history.findIndex((msg) => msg.role === 'user');
+        const validHistory = firstUserIndex >= 0 ? history.slice(firstUserIndex) : [];
+
         // Convert history to Gemini format
-        const chatHistory = history.map((msg) => ({
+        const chatHistory = validHistory.map((msg) => ({
             role: msg.role === 'assistant' ? 'model' : 'user',
             parts: [{ text: msg.content }],
         }));
