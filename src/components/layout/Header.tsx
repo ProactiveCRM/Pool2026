@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, MapPin, Trophy, User, Bot } from 'lucide-react';
+import { Menu, MapPin, Trophy, User, Bot, Camera } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useState } from 'react';
 
@@ -13,6 +13,7 @@ const navLinks = [
     { href: '/venues', label: 'Venues', icon: MapPin },
     { href: '/leagues', label: 'Leagues', icon: Trophy },
     { href: '/coach', label: 'AI Coach', icon: Bot },
+    { href: '/analyzer', label: 'Analyzer', icon: Camera },
 ];
 
 export function Header() {
