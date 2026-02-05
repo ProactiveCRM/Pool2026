@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CameraCapture } from '@/components/analyzer/CameraCapture';
 import { AnalysisResults } from '@/components/analyzer/AnalysisResults';
 import { analyzePoolTable, AnalysisResult } from '@/lib/actions/analyze-shot';
@@ -9,9 +9,15 @@ import { Sparkles, RotateCcw } from 'lucide-react';
 import { toast } from 'sonner';
 
 export function ShotAnalyzer() {
+    const [mounted, setMounted] = useState(false);
     const [isAnalyzing, setIsAnalyzing] = useState(false);
     const [result, setResult] = useState<AnalysisResult | null>(null);
     const [capturedImage, setCapturedImage] = useState<string | null>(null);
+
+    // Ensure client-side only rendering for camera APIs
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const handleCapture = async (imageData: string) => {
         setIsAnalyzing(true);
@@ -42,8 +48,19 @@ export function ShotAnalyzer() {
 
     return (
         <div className="space-y-6">
+            {/* Loading skeleton during SSR */}
+            {!mounted && (
+                <div className="animate-pulse space-y-4">
+                    <div className="aspect-video bg-muted rounded-lg" />
+                    <div className="grid grid-cols-2 gap-3">
+                        <div className="h-10 bg-muted rounded-lg" />
+                        <div className="h-10 bg-muted rounded-lg" />
+                    </div>
+                </div>
+            )}
+
             {/* Show camera if no result yet */}
-            {!result && (
+            {mounted && !result && (
                 <CameraCapture onCapture={handleCapture} isAnalyzing={isAnalyzing} />
             )}
 

@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/sonner';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 // Modern geometric font for brand
 const spaceGrotesk = Space_Grotesk({
@@ -97,6 +98,7 @@ export default function RootLayout({
         </div>
         <Toaster />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
