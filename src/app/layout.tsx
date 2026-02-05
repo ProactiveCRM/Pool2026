@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { QuickActions } from '@/components/layout/QuickActions';
 import { Toaster } from '@/components/ui/sonner';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -97,6 +98,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
+        <QuickActions />
         <Analytics />
         <SpeedInsights />
       </body>

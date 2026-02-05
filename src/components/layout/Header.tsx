@@ -10,7 +10,7 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { Menu, MapPin, Trophy, User, Bot, Camera, Home } from 'lucide-react';
+import { Menu, MapPin, Trophy, User, Bot, Camera, Home, Calendar } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { useState } from 'react';
 
@@ -18,6 +18,7 @@ const navLinks = [
     { href: '/', label: 'Home', icon: Home, tooltip: 'Back to homepage' },
     { href: '/venues', label: 'Venues', icon: MapPin, tooltip: 'Find pool halls near you' },
     { href: '/leagues', label: 'Leagues', icon: Trophy, tooltip: 'Join competitive leagues' },
+    { href: '/schedule', label: 'Schedule', icon: Calendar, tooltip: 'View matches and stats' },
     { href: '/coach', label: 'AI Coach', icon: Bot, tooltip: 'Get expert pool advice' },
     { href: '/analyzer', label: 'Analyzer', icon: Camera, tooltip: 'Analyze your shots with AI' },
 ];
