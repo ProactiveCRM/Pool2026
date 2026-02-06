@@ -1,13 +1,9 @@
-import { Metadata } from 'next';
+'use client';
+
 import { StatsDashboard } from '@/components/player/StatsDashboard';
 import { RunOutTracker } from '@/components/player/RunOutTracker';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { BarChart3, Flame } from 'lucide-react';
-
-export const metadata: Metadata = {
-    title: 'Stats',
-    description: 'Your pool performance statistics and run out tracking',
-};
 
 export default function StatsPage() {
     return (
@@ -49,3 +45,4 @@ export default function StatsPage() {
         </div>
     );
 }
+
