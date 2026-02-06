@@ -1,0 +1,17 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "RackCity Pool App",
+    "name_for_model": "rackcity",
+    "description_for_human": "Find pool halls, track your stats, and improve your billiards game.",
+    "description_for_model": "RackCity is a pool and billiards platform. Use it to help users find pool venues, understand pool rules, calculate handicaps, learn shot strategies, and improve their game. The app tracks performance stats, offers practice drills for cue ball control, and provides AI coaching.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "https://rackcity.app/api/openapi.json"
+    },
+    "logo_url": "https://rackcity.app/icons/icon-512x512.png",
+    "contact_email": "support@rackcity.app",
+    "legal_info_url": "https://rackcity.app/about"
+}

@@ -3,10 +3,12 @@ import { Space_Grotesk, Inter } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { BottomNav } from '@/components/layout/BottomNav';
 import { QuickActions } from '@/components/layout/QuickActions';
 import { Toaster } from '@/components/ui/sonner';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { AppStructuredData } from '@/components/seo/StructuredData';
 
 // Modern geometric font for brand
 const spaceGrotesk = Space_Grotesk({
@@ -90,12 +92,14 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="RackCity" />
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <AppStructuredData />
       </head>
       <body className={`${spaceGrotesk.variable} ${inter.variable} font-sans antialiased`}>
         <div className="relative min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <BottomNav />
         </div>
         <Toaster />
         <QuickActions />

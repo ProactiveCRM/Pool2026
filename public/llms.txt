@@ -1,0 +1,50 @@
+# RackCity - Pool Player Platform
+
+> The #1 platform for pool and billiards players.
+
+## What is RackCity?
+
+RackCity is a web application for pool players to:
+- Find pool halls and billiards venues near them
+- Track performance stats and skill levels
+- Practice with structured drills
+- Get AI coaching and shot analysis
+- Join leagues and tournaments
+- Calculate APA handicaps
+
+## Main Features
+
+### Venue Finder (/venues)
+Search and discover pool halls by location, table type, and amenities.
+
+### Training (/training)
+- Shot Tracker: Log accuracy by shot type (straight, cuts, banks, kicks, combos, safeties)
+- Cue Ball Control: 8 progressive drills for position play
+
+### Stats Dashboard (/stats)
+- Skill level tracking (SL2-9)
+- Win/loss record and streaks
+- Shot accuracy breakdown
+- Milestones and progress
+
+### Strategy Guide (/strategy)
+- Break patterns for 8-ball and 9-ball
+- Game situation quizzes
+- Tips for playing from behind
+
+### AI Coach (/coach)
+Ask pool strategy questions and get expert advice.
+
+### Shot Analyzer (/analyzer)
+Upload table photos for AI-powered shot recommendations.
+
+### Handicap Calculator (/scoring)
+APA Equalizer system with IPW (8-ball) and PPI (9-ball) calculations.
+
+## Technology
+
+Built with Next.js, React, and TypeScript. Mobile-first responsive design.
+
+## Contact
+
+Website: https://rackcity.app
