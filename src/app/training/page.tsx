@@ -1,13 +1,9 @@
-import { Metadata } from 'next';
+'use client';
+
 import { ShotTracker } from '@/components/practice/ShotTracker';
 import { CueBallControl } from '@/components/practice/CueBallControl';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Target, Crosshair } from 'lucide-react';
-
-export const metadata: Metadata = {
-    title: 'Training',
-    description: 'Practice drills and shot tracking for pool improvement',
-};
 
 export default function TrainingPage() {
     return (
@@ -54,3 +50,4 @@ export default function TrainingPage() {
         </div>
     );
 }
+
