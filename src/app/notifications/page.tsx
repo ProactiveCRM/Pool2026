@@ -1,10 +1,6 @@
-import { Metadata } from 'next';
-import { NotificationCenter, demoNotifications } from '@/components/notifications/NotificationCenter';
+'use client';
 
-export const metadata: Metadata = {
-    title: 'Notifications',
-    description: 'View your notifications and alerts',
-};
+import { NotificationCenter, demoNotifications } from '@/components/notifications/NotificationCenter';
 
 export default function NotificationsPage() {
     return (
@@ -27,3 +23,4 @@ export default function NotificationsPage() {
         </div>
     );
 }
+

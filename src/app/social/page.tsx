@@ -1,13 +1,10 @@
-import { Metadata } from 'next';
+'use client';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { FriendsList, demoFriends, demoPendingRequests, demoSuggestions } from '@/components/social/FriendsList';
 import { MatchHistory, demoMatches } from '@/components/matches/MatchHistory';
 import { Users, Clock } from 'lucide-react';
 
-export const metadata: Metadata = {
-    title: 'Social',
-    description: 'Connect with friends and view your match history',
-};
 
 export default function SocialPage() {
     return (

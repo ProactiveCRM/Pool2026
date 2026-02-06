@@ -1,10 +1,6 @@
-import { Metadata } from 'next';
-import { UserSettings } from '@/components/settings/UserSettings';
+'use client';
 
-export const metadata: Metadata = {
-    title: 'Settings',
-    description: 'Customize your RackCity experience',
-};
+import { UserSettings } from '@/components/settings/UserSettings';
 
 export default function SettingsPage() {
     return (
@@ -24,3 +20,4 @@ export default function SettingsPage() {
         </div>
     );
 }
+

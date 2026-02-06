@@ -1,10 +1,20 @@
 'use client';
 
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Search } from 'lucide-react';
+import { Search, Loader2 } from 'lucide-react';
 import { NearMeButton } from '@/components/venues/NearMeButton';
+
+function NearMeButtonFallback() {
+    return (
+        <Button variant="outline" disabled className="text-base w-full sm:w-auto h-11">
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            Loading...
+        </Button>
+    );
+}
 
 export function HeroButtons() {
     return (
@@ -15,10 +25,12 @@ export function HeroButtons() {
                     Browse All Venues
                 </Link>
             </Button>
-            <NearMeButton
-                variant="outline"
-                className="text-base w-full sm:w-auto h-11"
-            />
+            <Suspense fallback={<NearMeButtonFallback />}>
+                <NearMeButton
+                    variant="outline"
+                    className="text-base w-full sm:w-auto h-11"
+                />
+            </Suspense>
         </div>
     );
 }
@@ -30,3 +42,4 @@ export function HeroBadge() {
         </Badge>
     );
 }
+

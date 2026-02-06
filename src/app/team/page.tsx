@@ -1,10 +1,6 @@
-import { Metadata } from 'next';
-import { TeamRoster, demoTeam } from '@/components/teams/TeamRoster';
+'use client';
 
-export const metadata: Metadata = {
-    title: 'My Team',
-    description: 'View and manage your team roster',
-};
+import { TeamRoster, demoTeam } from '@/components/teams/TeamRoster';
 
 export default function TeamPage() {
     return (
@@ -28,3 +24,4 @@ export default function TeamPage() {
         </div>
     );
 }
+

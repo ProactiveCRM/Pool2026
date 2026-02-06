@@ -1,12 +1,8 @@
-import { Metadata } from 'next';
+'use client';
+
 import { TableTimer } from '@/components/venues/TableTimer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Clock, MapPin } from 'lucide-react';
-
-export const metadata: Metadata = {
-    title: 'Play',
-    description: 'Track your table time and costs',
-};
+import { MapPin } from 'lucide-react';
 
 export default function PlayPage() {
     return (
@@ -61,3 +57,4 @@ export default function PlayPage() {
         </div>
     );
 }
+

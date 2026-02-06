@@ -1,13 +1,10 @@
-import { Metadata } from 'next';
+'use client';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { HandicapCalculator } from '@/components/scoring/HandicapCalculator';
 import { QuickScorer } from '@/components/scoring/QuickScorer';
 import { Calculator, Target } from 'lucide-react';
 
-export const metadata: Metadata = {
-    title: 'Scoring',
-    description: 'Handicap calculator and match scoring tools',
-};
 
 export default function ScoringPage() {
     return (

@@ -1,13 +1,10 @@
-import { Metadata } from 'next';
+'use client';
+
 import { Leaderboard, demoLeaderboardPlayers } from '@/components/leagues/Leaderboard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Trophy, Users, Calendar, Target } from 'lucide-react';
 
-export const metadata: Metadata = {
-    title: 'Leaderboard',
-    description: 'See who tops the rankings in your pool league',
-};
 
 export default function LeaderboardPage() {
     // Demo stats

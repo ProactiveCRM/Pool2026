@@ -1,10 +1,6 @@
-import { Metadata } from 'next';
-import { MatchLogger } from '@/components/matches/MatchLogger';
+'use client';
 
-export const metadata: Metadata = {
-    title: 'Log Match',
-    description: 'Record your match results for APA handicap tracking',
-};
+import { MatchLogger } from '@/components/matches/MatchLogger';
 
 export default function LogMatchPage() {
     return (
@@ -28,3 +24,4 @@ export default function LogMatchPage() {
         </div>
     );
 }
+

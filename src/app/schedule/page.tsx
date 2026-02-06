@@ -1,13 +1,10 @@
-import { Metadata } from 'next';
+'use client';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { MatchCalendar, demoMatches } from '@/components/leagues/MatchCalendar';
 import { StatsDashboard, demoPerformanceData, demoGameTypeStats, demoRecentForm } from '@/components/stats/StatsDashboard';
 import { Calendar, BarChart3 } from 'lucide-react';
 
-export const metadata: Metadata = {
-    title: 'My Schedule & Stats',
-    description: 'View your match schedule and performance statistics',
-};
 
 export default function SchedulePage() {
     return (
