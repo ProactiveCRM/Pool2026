@@ -11,7 +11,8 @@ import {
     Menu
 } from 'lucide-react';
 import { useState } from 'react';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from '@/components/ui/sheet';
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 
 const navItems = [
     { href: '/', label: 'Home', icon: Home },
@@ -90,6 +91,10 @@ export function BottomNav() {
                             </button>
                         </SheetTrigger>
                         <SheetContent side="bottom" className="h-[70vh] rounded-t-3xl">
+                            <VisuallyHidden.Root>
+                                <SheetTitle>More Features</SheetTitle>
+                                <SheetDescription>Access additional app features</SheetDescription>
+                            </VisuallyHidden.Root>
                             <div className="pt-4">
                                 <div className="w-12 h-1 bg-muted rounded-full mx-auto mb-6" />
                                 <h3 className="text-lg font-bold mb-4 px-2">More Features</h3>
